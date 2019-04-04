@@ -10,6 +10,7 @@ import { BookItemComponent } from './books/book-list/book-item/book-item.compone
 import { BookDetailComponent } from './books/book-detail/book-detail.component';
 import { MyLibraryComponent } from './my-library/my-library.component';
 import { MyLibraryAddComponent } from './my-library/my-library-add.component';
+import { DropDownDirective } from './header/drop-down.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MyLibraryAddComponent } from './my-library/my-library-add.component';
     BookItemComponent,
     BookDetailComponent,
     MyLibraryComponent,
-    MyLibraryAddComponent
+    MyLibraryAddComponent,
+    DropDownDirective
   ],
   imports: [
     BrowserModule,

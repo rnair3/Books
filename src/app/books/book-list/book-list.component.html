@@ -5,8 +5,8 @@
 </div>
 <br>
 <div class="row">
-  <div class="col-md-4">
-      <app-book-item [book]="b" (click)="onSelected(b)"></app-book-item>
+  <div class="col-xs-12">
+      <app-book-item *ngFor="let b of books" [book]="b" (click)="onSelected(b)"></app-book-item>
   </div>
 </div>
 

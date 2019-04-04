@@ -9,13 +9,15 @@ import {Book} from '../book';
 })
 export class BookListComponent implements OnInit {
 
-  books: Book[] = [];
+  books: Book[] = [
+    new Book('ABC', 'Dummy', 'https://image.dhgate.com/0x0/f2/albu/g6/M01/22/25/rBVaSFpDnAKAeB2AAABYR7tag2g240.jpg'),
+    new Book('ABC', 'Dummy', 'https://image.dhgate.com/0x0/f2/albu/g6/M01/22/25/rBVaSFpDnAKAeB2AAABYR7tag2g240.jpg')
+  ];
   @Output() bookSelected = new EventEmitter();
-  b = new Book('Dummy', 'Dummy', 'https://image.dhgate.com/0x0/f2/albu/g6/M01/22/25/rBVaSFpDnAKAeB2AAABYR7tag2g240.jpg');
+
   constructor() { }
 
   ngOnInit() {
-    console.log(this.b.name);
   }
 
   onSelected(book: Book) {
