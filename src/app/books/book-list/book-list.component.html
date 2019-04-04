@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-xs-12">
+    <a class="btn btn-success">New Book</a>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-4">
+      <app-book-item [book]="b" (click)="onSelected(b)"></app-book-item>
+  </div>
+</div>
+
