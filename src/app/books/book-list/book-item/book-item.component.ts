@@ -8,7 +8,7 @@ import {Book} from '../../book';
 })
 export class BookItemComponent implements OnInit {
   @Input() book: Book;
-  bookId: number;
+  @Input()bookId: number;
   constructor() { }
 
   ngOnInit() {

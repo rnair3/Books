@@ -8,9 +8,9 @@
     <h1>{{selectedBook?.name}}</h1>
   </div>
   <div class="col-xs-12">
-    <button class="btn btn-success mr-md-2">Add to my Library</button>
-    <button class="btn btn-primary mr-md-2">Edit</button>
-    <button class="btn btn-danger">Delete</button>
+    <button class="btn btn-success mr-md-2" (click)="addToLibrary()">Add to my Library</button>
+    <button class="btn btn-primary mr-md-2" (click)="onEdit()">Edit</button>
+    <button class="btn btn-danger" (click)="onDelete()">Delete</button>
   </div>
 </div>
 <hr>
@@ -18,5 +18,10 @@
   <div class="col-xs-12">
     <p>{{selectedBook?.description}}</p>
   </div>
+</div>
+<div class="row">
+  <ul class="col-xs-12">
+    <li class="list-group-item" *ngFor="let myBook of Books">{{myBook.name}}</li>
+  </ul>
 </div>
 

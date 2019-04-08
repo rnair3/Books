@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import {AppRoutingModule, routing} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookListComponent } from './books/book-list/book-list.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,6 +11,8 @@ import { BookDetailComponent } from './books/book-detail/book-detail.component';
 import { MyLibraryComponent } from './my-library/my-library.component';
 import { MyLibraryAddComponent } from './my-library/my-library-add.component';
 import { DropDownDirective } from './header/drop-down.directive';
+import {MyLibraryService} from './my-library/my-library.service';
+import { BookStartComponent } from './books/book-start.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,16 @@ import { DropDownDirective } from './header/drop-down.directive';
     BookDetailComponent,
     MyLibraryComponent,
     MyLibraryAddComponent,
-    DropDownDirective
+    DropDownDirective,
+    BookStartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    routing
+
   ],
-  providers: [],
+  providers: [MyLibraryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

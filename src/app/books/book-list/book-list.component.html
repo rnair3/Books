@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-xs-12">
-    <a class="btn btn-success">New Book</a>
+    <a [routerLink]="['new']" class="btn btn-success">New Book</a>
   </div>
 </div>
 <br>
 <div class="row">
   <div class="col-xs-12">
-      <app-book-item *ngFor="let b of books" [book]="b" (click)="onSelected(b)"></app-book-item>
+      <app-book-item *ngFor="let b of books; let i=index" [book]="b" [bookId]="i"></app-book-item>
   </div>
 </div>
 
