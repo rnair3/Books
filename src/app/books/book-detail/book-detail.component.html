@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-xs-12">
-    <img src="{{selectedBook?.imgPath}}" alt="" class="img-responsive"/>
+    <img src="assets/{{selectedBook?.imageLink}}" alt="" class="img-responsive"/>
   </div>
 </div>
 <div>
   <div class="col-xs-12">
-    <h1>{{selectedBook?.name}}</h1>
+    <h1>{{selectedBook?.title}}</h1>
   </div>
   <div class="col-xs-12">
     <button class="btn btn-success mr-md-2" (click)="addToLibrary()">Add to my Library</button>
@@ -16,12 +16,12 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
-    <p>{{selectedBook?.description}}</p>
+    <p>{{selectedBook?.author}}</p>
   </div>
 </div>
 <div class="row">
   <ul class="col-xs-12">
-    <li class="list-group-item" *ngFor="let myBook of Books">{{myBook.name}}</li>
+    <li class="list-group-item" *ngFor="let myBook of Books">{{myBook.title}}</li>
   </ul>
 </div>
 

@@ -1,29 +1,47 @@
 import { Injectable } from '@angular/core';
 import {Book} from './book';
-import {HttpClient} from '@angular/common/http';
-import 'rxjs/add/operator/map';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
 
-  private books: Book[] = [
-    new Book('ABC', 'Dummy', 'https://image.dhgate.com/0x0/f2/albu/g6/M01/22/25/rBVaSFpDnAKAeB2AAABYR7tag2g240.jpg'),
-    new Book('XYZ', 'Dummy', 'https://image.dhgate.com/0x0/f2/albu/g6/M01/22/25/rBVaSFpDnAKAeB2AAABYR7tag2g240.jpg')
-  ];
+  private books: Book[] = [];
   constructor(private http: HttpClient) { }
 
   getBooks() {
+    this.fetchData().subscribe(data => this.books = data);
     return this.books;
   }
 
   getBook(id: number) {
+    this.fetchData().subscribe(data => this.books = data);
     return this.books[id];
   }
 
   deleteBook(book: Book) {
     this.books.splice(this.books.indexOf(book), 1);
+  }
+
+  storeData() {
+    const body = JSON.stringify(this.books);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    this.http.put('https://bookcatalog-85634.firebaseio.com/books.json', body, {headers});
+  }
+
+  fetchData(): Observable<Book[]> {
+    // const a = this.http.get(encodeURI('https://bookcatalog-85634.firebaseio.com/books.json'));
+    // console.log(a);
+    // return a;
+    return this.http.get<Book[]>(encodeURI('https://bookcatalog-85634.firebaseio.com/books.json'));
+      // .pipe(map((response: Response) => response.json()))
+     // .subscribe(data => this.books = data);
   }
 
   // getSearchedBook(search: string) {

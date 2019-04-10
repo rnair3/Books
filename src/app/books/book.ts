@@ -1,3 +1,10 @@
 export class Book {
-  constructor(public name: string, public description: string, public imgPath: string) {}
+  constructor(public author: string,
+              public country: string,
+              public imageLink: string,
+              public language: string,
+              public link: string,
+              public title: string,
+              public year: string,
+              public pages: string) {}
 }

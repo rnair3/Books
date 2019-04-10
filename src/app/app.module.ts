@@ -13,6 +13,7 @@ import { MyLibraryAddComponent } from './my-library/my-library-add.component';
 import { DropDownDirective } from './header/drop-down.directive';
 import {MyLibraryService} from './my-library/my-library.service';
 import { BookStartComponent } from './books/book-start.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BookStartComponent } from './books/book-start.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    routing
+    routing,
+    HttpClientModule
 
   ],
   providers: [MyLibraryService],

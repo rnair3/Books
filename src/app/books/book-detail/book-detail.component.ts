@@ -37,7 +37,7 @@ export class BookDetailComponent implements OnInit, OnDestroy {
 
   onDelete() {
     this.bookService.deleteBook(this.selectedBook);
-    this.router.navigate(['/recipes']);
+    this.router.navigate(['/books']);
   }
 
   addToLibrary() {
